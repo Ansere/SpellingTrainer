@@ -1,0 +1,2 @@
+# SpellingTrainer
+trains spelling 
