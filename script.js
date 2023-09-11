@@ -1,6 +1,6 @@
 let words = []
 await fetch("wordlist.txt").then(p => p.text()).then((text) => {
-    words = text.split("\r\n")
+    words = text.replace("\r", "").split("\n")
 })
 
 let acceptableWords = []
