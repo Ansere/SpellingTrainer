@@ -1,5 +1,6 @@
 let words = []
 await fetch("wordlist.txt").then(p => p.text()).then((text) => {
+    console.log(text)
     words = text.replace("\r", "").split("\n")
 })
 
