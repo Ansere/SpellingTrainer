@@ -6,8 +6,6 @@ await fetch("wordlist.txt").then(p => p.text()).then((text) => {
 let acceptableWords = []
 
 newWord()
-console.log("hi")
-console.log(acceptableWords)
 function newWord() {
     let wordStr = words[Math.floor(Math.random() * words.length)]
     acceptableWords = wordStr.split(", ")
@@ -16,7 +14,7 @@ function newWord() {
 }
 
 document.getElementById("input").addEventListener("keyup", (event) => {
-    if (event.code !== "Enter") {
+    if (event.key !== "Enter") {
         return;
     }
     let messageText = document.getElementById("input").value.replace("'", "’")
