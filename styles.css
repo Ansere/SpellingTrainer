@@ -1,0 +1,61 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+body {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+#mainDiv {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+#mainDiv > p {
+    margin: 0.1em;
+}
+
+
+#wordListSettingsLabel {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+
+.wrong {
+    color: red;
+}
+
+audio {
+    width: 20%
+}
+
+p, input, label, button { 
+    font-size: 1.5em;
+}
+
+button {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 1em;
+}
+
+form > input {
+    width: 0.75em;
+    height: 0.75em;
+}
+
+#wordListSettingsDiv, #trainingSettingsDiv {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2em;
+}
