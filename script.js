@@ -167,8 +167,8 @@ let wordObj = {}
 let acceptableWords = []
 let acceptableWordsLeft = []
 
-if (Boolean(window.localStorage.getItem("settings"))) {
-    let pastSettings = JSON.parse(window.localStorage.getItem("settings"))
+if (Boolean(window.localStorage.getItem("SpellingTrainerSettings"))) {
+    let pastSettings = JSON.parse(window.localStorage.getItem("SpellingTrainerSettings"))
     for (let key in pastSettings) {
         settings[key] = pastSettings[key]
     }
@@ -208,7 +208,7 @@ if (Boolean(window.localStorage.getItem("settings"))) {
     })
     updateWordList()
 } else {
-    window.localStorage.setItem("settings", JSON.stringify(settings))
+    window.localStorage.setItem("SpellingTrainerSettings", JSON.stringify(settings))
 }
 
 
@@ -244,31 +244,31 @@ function updateSettings() {
         }
         settings[key] = Boolean(document.getElementById(key).checked)
     }
-    window.localStorage.setItem("settings", JSON.stringify(settings))
+    window.localStorage.setItem("SpellingTrainerSettings", JSON.stringify(settings))
 }
 
 function updateWordCorrect(wordObj, val) {
     settings.wordData[wordObj.wordStr.split(", ")[0]].correct = val
     wordObj.correct = val
-    window.localStorage.setItem("settings", JSON.stringify(settings))
+    window.localStorage.setItem("SpellingTrainerSettings", JSON.stringify(settings))
 }
 
 function updateWordMiss(word, val) {
     settings.wordData[wordObj.wordStr.split(", ")[0]].correct = val
     wordObj.missed = val
-    window.localStorage.setItem("settings", JSON.stringify(settings))
+    window.localStorage.setItem("SpellingTrainerSettings", JSON.stringify(settings))
 }
 
 function updateWordGroupChange(word) {
     settings.wordData[wordObj.wordStr.split(", ")[0]].group = val
     wordObj.group = val
-    window.localStorage.setItem("settings", JSON.stringify(settings))
+    window.localStorage.setItem("SpellingTrainerSettings", JSON.stringify(settings))
 }
 
 function updateWordRemoveSessionCorrect(wordObj, val) {
     settings.wordData[wordObj.wordStr.split(", ")[0]].removeSessionCorrect = val
     wordObj.removeSessionCorrect = val
-    window.localStorage.setItem("settings", JSON.stringify(settings))
+    window.localStorage.setItem("SpellingTrainerSettings", JSON.stringify(settings))
 }
 
 function infoizeWord(w) {
