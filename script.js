@@ -7,7 +7,7 @@ let currentWord = "placeholder";
 
 var { pdfjsLib } = globalThis;
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.mjs';
-let url = `https://www.uiltexas.org/files/academics/WordPower_2024-25_July1.pdf`
+let url = `https://corsproxy.io/?https://www.uiltexas.org/files/academics/WordPower_2024-25_July1.pdf`
 
 if ('speechSynthesis' in window) {
     // Speech Synthesis supported 🎉
@@ -307,6 +307,7 @@ function newWord() {
     acceptableWords = wordStr.replace("\r", "").split(", ")
     acceptableWordsLeft = wordStr.replace("\r", "").split(", ")
     if (wordObj.list) {
+        window.speechSynthesis.cancel()
         playWord()
     }
     console.log("hi")
