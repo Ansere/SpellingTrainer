@@ -6,6 +6,7 @@ html, body {
 }
 
 body {
+    height: 100%;
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
@@ -13,7 +14,6 @@ body {
 }
 
 #mainDiv {
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,7 +44,7 @@ p, input, label, button {
     font-size: 1.5em;
 }
 
-button {
+#playWord {
     font-family: 'Times New Roman', Times, serif;
     margin: 1em;
 }
@@ -58,4 +58,25 @@ form > input {
     display: flex;
     flex-direction: row;
     column-gap: 2em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+#structure {
+    flex-direction: column;
+    display: contents;
+}
+
+#footer {
+    background-color: rgb(43, 47, 255);
+    width: 100%;
+    height: max-content;
+    padding: 1%;
+    font-size: 1.5em;
+    justify-content: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    flex: 0 1 40px;
+    position:absolute;
+    bottom: 0%;
 }

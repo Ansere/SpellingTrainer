@@ -1,65 +1,85 @@
 <!DOCTYPE html>
+
 <head>
-    <link rel = "stylesheet" href = "./styles.css"></link>
+    <link rel="stylesheet" href="./styles.css">
+    </link>
     <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
-    function addDarkmodeWidget() {
-        new Darkmode().showWidget();
-    }
-    window.addEventListener('load', addDarkmodeWidget);
-    </script>
-    <script type = "module" src="script.js"></script>
-</head>
-<body>
-    <div id = "mainDiv">
-        
-        <button id = "playWord">
-            Play Word
-        </button>
-          <div id = "inputDiv" style = "display: flex; flex-direction: column;">
-            <input id = "input">
-        </div>
-        <p id = "score">Score: 0/0, 0%</p>
-        <p id = "streak"></p>
-        <p class = "" id = "label">
-        </p>
-        <label id = "wordListSettingsLabel">Word List settings</label>
-        <div id = "wordListSettingsDiv">
-            <form id = "wordListSettings">
-                <input type="checkbox" id = "all" checked = "t">
-                <label for="all">All</label><br>
-                <input type="checkbox" id = "accents" checked = "t">
-                <label for="accents">Accents</label><br>
-                <input type="checkbox" id = "capitals" checked = "t">
-                <label for="capitals">Capitals</label><br>
-                <input type="checkbox" id = "hyphens" checked = "t">
-                <label for="hyphens">Hyphens</label><br>
-                <input type="checkbox" id = "multWords" checked = "t">
-                <label for="multWords">Multiple Words</label><br>
-                <input type="checkbox" id = "listVariants" checked = "t">
-                <label for="listVariants">List Variants</label>
-              </form>
-              <form id = "wordSourceSettings" onsubmit="return false">
-                <input type="checkbox" id = "list" checked = "t">
-                <label for="list">List</label><br>
-                <input type="checkbox" id = "custom" disabled="disabled">
-                <label for="custom">Custom Word List:</label><br>
-                <textarea id = "customWordList" style = "width: 100%"></textarea>
+        function addDarkmodeWidget() {
+            const options = {
+                bottom: '96px', // default: '32px'
+                right: '32px', // default: '32px'
+                left: 'unset', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: '#fff',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
 
-              </form>
-        </div>
-        <label id = "trainingSettingsLabel">Training Settings</label>
-        <div id = "trainingSettingsDiv">
-            <form id = "trainingSettings" onsubmit="return false">
-                <input type="checkbox" id = "removeAfter" checked = "f">
-                    <label for="removeAfter" id = "removeAfterLabel">Remove after 
-                        <input type = "number" style = "width: 2em; font-size: 1em;" min = "1" value = "1" id = "removeAfterVal">
+            new Darkmode(options).showWidget();
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+    <script type="module" src="script.js"></script>
+</head>
+
+<body>
+    <div id="structure">
+        <div id="mainDiv">
+
+            <button id="playWord">
+                Play Word
+            </button>
+            <div id="inputDiv" style="display: flex; flex-direction: column;">
+                <input id="input">
+            </div>
+            <p id="score">Score: 0/0, 0%</p>
+            <p id="streak"></p>
+            <p class="" id="label">
+            </p>
+            <label id="wordListSettingsLabel">Word List settings</label>
+            <div id="wordListSettingsDiv">
+                <form id="wordListSettings">
+                    <input type="checkbox" id="all" checked="t">
+                    <label for="all">All</label><br>
+                    <input type="checkbox" id="accents" checked="t">
+                    <label for="accents">Accents</label><br>
+                    <input type="checkbox" id="capitals" checked="t">
+                    <label for="capitals">Capitals</label><br>
+                    <input type="checkbox" id="hyphens" checked="t">
+                    <label for="hyphens">Hyphens</label><br>
+                    <input type="checkbox" id="multWords" checked="t">
+                    <label for="multWords">Multiple Words</label><br>
+                    <input type="checkbox" id="listVariants" checked="t">
+                    <label for="listVariants">List Variants</label>
+                </form>
+                <form id="wordSourceSettings" onsubmit="return false">
+                    <input type="checkbox" id="list" checked="t">
+                    <label for="list">List</label><br>
+                    <input type="checkbox" id="custom" disabled="disabled">
+                    <label for="custom">Custom Word List:</label><br>
+                    <textarea id="customWordList" style="width: 100%"></textarea>
+
+                </form>
+            </div>
+            <label id="trainingSettingsLabel">Training Settings</label>
+            <div id="trainingSettingsDiv">
+                <form id="trainingSettings" onsubmit="return false">
+                    <input type="checkbox" id="removeAfter" checked="f">
+                    <label for="removeAfter" id="removeAfterLabel">Remove after
+                        <input type="number" style="width: 2em; font-size: 1em;" min="1" value="1" id="removeAfterVal">
                         correct answer.
                     </label><br>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
-
-
+        <div id="footer">
+            Made by Aidan Lai (ansere) with help from Rohan Lahiri, Benjamin Yang, and Aayush Ishware
+        </div>
+        <div>
 </body>
