@@ -7,7 +7,7 @@ let currentWord = "placeholder";
 
 var { pdfjsLib } = globalThis;
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.mjs';
-let url = `https://corsproxy.io/?url=https://www.uiltexas.org/files/academics/WordPower_2024-25_July1.pdf`
+let url = `https://www.uiltexas.org/files/academics/WordPower_2025-2026.pdf`
 
 if ('speechSynthesis' in window) {
     // Speech Synthesis supported 🎉
